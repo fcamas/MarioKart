@@ -115,9 +115,27 @@ class ViewController: UIViewController,
   }
   
   // Exercise 5: Implement `resetKarts` to reset the size and positioning of the karts
-  private func resetKarts() {
-    // YOUR CODE HERE
-  }
+    private func resetKarts() {
+        // YOUR CODE HERE
+        resetBounds(kart: kartView0, by: 0)
+        resetBounds(kart: kartView1, by: 1)
+        resetBounds(kart: kartView2, by: 2)
+        
+    }
+    
+    private func resetBounds(kart: UIView?,
+                            by xPosition: Int,
+                             animationDuration: Double = 0.6
+    ) {
+        
+        guard let kart = kart else { return }
+        UIView.animate(withDuration: animationDuration) {
+            kart.center = self.originalKartCenters[xPosition]
+            kart.transform = .identity
+        }
+        
+        
+    }
   
   // Called whenever the view becomes visible on the screen
   override func viewDidAppear(_ animated: Bool) {

@@ -122,6 +122,9 @@ class ViewController: UIViewController,
   // Exercise 5: Implement `resetKarts` to reset the size and positioning of the karts
     private func resetKarts() {
         // YOUR CODE HERE
+       
+        
+        runStartingAnimationsOneByOne()
         resetBounds(kart: kartView0, by: 0)
         resetBounds(kart: kartView1, by: 1)
         resetBounds(kart: kartView2, by: 2)
@@ -174,6 +177,13 @@ class ViewController: UIViewController,
   // Tip: Use `getKartReadyToRace` and its completion closure
   private func runStartingAnimationsOneByOne(completion: (() -> Void)? = nil) {
     // YOUR CODE HERE
+      getKartReadyToRace(kart: kartView0) {
+                self.getKartReadyToRace(kart: self.kartView1) {
+                    self.getKartReadyToRace(kart: self.kartView2) {
+                        completion?()
+                    }
+                }
+            }
   }
   
   // Exercise 9: Have the karts race all at once to the finish line!

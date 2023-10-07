@@ -200,6 +200,13 @@ class ViewController: UIViewController,
     // Tip: Use the `translate` function above
     private func raceKartsWithRandomizedSpeed() {
         // YOUR CODE HERE
+        let random1 = Double.random(in: 0.5...5.0)
+        let random2 = Double.random(in: 0.5...5.0)
+        let random3 = Double.random(in: 0.5...5.0)
+        translate(kart: kartView0, by: view.frame.width, animationDuration: random1)
+        translate(kart: kartView1, by: view.frame.width, animationDuration: random2)
+        translate(kart: kartView2, by: view.frame.width, animationDuration: random3)
+        
     }
 }
 

@@ -29,6 +29,9 @@ class ViewController: UIViewController,
         originalKartCenters = [kartView0.center,
                                kartView1.center,
                                kartView2.center]
+        
+       
+        resetKarts()
     }
     
     //  Called when user double-taps a kart
@@ -36,7 +39,9 @@ class ViewController: UIViewController,
         // Exercise 1: Move the kart forward past the edge of the screen
         // Tip: Use the `translate` function below
         // YOUR CODE HERE
-        translate(kart: sender.view, by: UIScreen.main.bounds.width)
+        
+        
+       // translate(kart: sender.view, by: UIScreen.main.bounds.width)
         
         // Exercise 6: Move the kart back to its original position after you've moved it off the screen
         // Tip: Change your usage of the `translate` function to
@@ -44,12 +49,14 @@ class ViewController: UIViewController,
         // YOUR CODE HERE
         
         // translate(kart: sender.view, by: -UIScreen.main.bounds.width)
-        translate(kart: sender.view, by: 0.6, animationDuration: 1) {
+        
+        
+       // translate(kart: sender.view, by: 0.6, animationDuration: 1) {
             
-            self.translate(kart: sender.view, by: -UIScreen.main.bounds.width)
-        }
+       //     self.translate(kart: sender.view, by: -UIScreen.main.bounds.width)
+       //}
         
-        
+        raceKartsWithRandomizedSpeed()
     }
     
     private func translate(kart: UIView?,

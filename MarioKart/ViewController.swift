@@ -32,6 +32,7 @@ class ViewController: UIViewController,
         
        
         resetKarts()
+        raceKartsWithRandomizedSpeed()
     }
     
     //  Called when user double-taps a kart
